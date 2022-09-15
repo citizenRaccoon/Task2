@@ -58,7 +58,7 @@ Write a function that accepts two arguments, an array of numbers and a single in
 **Usage:**
 
 1) Using by writing array down command line
-- First argument is array. Numbers' delimeter is comma (,); each array level must be taken in square brackets, including the first one (e.g *[2, 5, [3, 2]]*). This argument must be enclosed with quotes.
+- First argument is array. Numbers' delimeter is comma (,); each array level must be taken in square brackets, including the first one (e.g *[2, 5, [3, 2]]*). This argument must be enclosed with quotes. **Any symbols others than numbers, comma or square brackets will be ignored.**
 - Second argument is multiplier. It can be only a number.
 
 ```bash
@@ -67,7 +67,7 @@ php array_multiplier.php "[12, [176, 593], 24, 53, [15, [1245, 6345, 63546, [654
 
 2) Using with input from file
 - First argument is **-f**
-- Second argument is path to a text file with an array (e.g. *resources/file.txt*, */home/user/file.txt*). Numbers' delimeter is comma (,); each array level must be taken in square brackets, including the first one (e.g *[2, 5, [3, 2]]*). This argument must be enclosed with quotes.
+- Second argument is path to a text file with an array (e.g. *resources/file.txt*, */home/user/file.txt*). Numbers' delimeter is comma (,); each array level must be taken in square brackets, including the first one (e.g *[2, 5, [3, 2]]*). This argument must be enclosed with quotes. **Any symbols others than numbers, comma or square brackets will be ignored.**
 - Third argument is multiplier. It can be only a number.
 ```bash
 php array_multiplier.php -f resources/multiply_check.txt 5
