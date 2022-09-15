@@ -1,5 +1,12 @@
 <?php
 
+function execute(String $arrInString, int $multiplier): String
+{
+    $arr = str_to_arr($arrInString);
+    $arr = arr_multiply($arr, $multiplier);
+    return arr_to_str($arr);
+}
+
 function str_to_arr(String &$str): array|false
 {
     $result = [];
@@ -96,8 +103,6 @@ if(empty($argv[2])) {
     } elseif (!check_brackets($arrToCheck)) {
         echo 'Open brackets count must be the same as close brackets.';
     } else {
-        $arr = str_to_arr($arrToCheck);
-        $arr = arr_multiply($arr, $multiplier);
-        echo arr_to_str($arr);
+        echo execute($arrToCheck, $multiplier);
     }
 }
