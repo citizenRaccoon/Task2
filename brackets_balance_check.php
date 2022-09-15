@@ -2,17 +2,17 @@
 
 require_once 'classes/Stack.php';
 
-function check_parentheticals(String $text): bool
+function check_brackets(String $text): bool
 {
     $textAsArray = str_split($text);
     $charsStack = new Stack();
-    $parethicalChars = ['}' =>'{', ']' => '[', ')' => '('];
+    $bracketsChars = ['}' =>'{', ']' => '[', ')' => '('];
     foreach ($textAsArray as $char) {
         if(in_array($char, ['[', '{', '('])) {
             $charsStack->push($char);
         }
         if(in_array($char, [']', '}', ')'])) {
-            if($charsStack->peek() === $parethicalChars[$char]) {
+            if($charsStack->peek() === $bracketsChars[$char]) {
                 $charsStack->pop();
             } else {
                 return false;
@@ -35,5 +35,5 @@ if(!isset($argv[1])) {
     } else {
         $text = $argv[1];
     }
-    echo 'This is ' , check_parentheticals($text) ? 'balanced' : 'unbalanced' , ': ' , $text;
+    echo 'This is ' , check_brackets($text) ? 'balanced' : 'unbalanced' , ': ' , $text;
 }

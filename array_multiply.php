@@ -91,7 +91,7 @@ if(empty($argv[2])) {
     }
     if (!is_numeric($multiplier)) {
         echo 'Multiplier must be a number.';
-    } elseif (substr($arrToCheck, 0, 1) != '[') {
+    } elseif (!str_starts_with($arrToCheck, '[')) {
         echo 'Array need to begin with square bracket "["';
     } elseif (!check_brackets($arrToCheck)) {
         echo 'Open brackets count must be the same as close brackets.';
